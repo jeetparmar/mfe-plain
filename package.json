@@ -1,0 +1,21 @@
+{
+  "name": "mfe-plain",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"webpack serve -c apps/host/webpack.config.js\" \"webpack serve -c apps/header/webpack.config.js\" \"webpack serve -c apps/content/webpack.config.js\"",
+    "build": "webpack -c apps/host/webpack.config.js --mode production && webpack -c apps/header/webpack.config.js --mode production && webpack -c apps/content/webpack.config.js --mode production",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": { "react": "^18.3.1", "react-dom": "^18.3.1" },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "concurrently": "^9.0.1",
+    "esbuild-loader": "^4.2.2",
+    "html-webpack-plugin": "^5.6.3",
+    "typescript": "^5.6.3",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
+}
